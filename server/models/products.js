@@ -23,6 +23,11 @@ const productSchema = new mongoose.Schema(
       type: Number,
       default: 0,
     },
+
+    pSize: {
+      type: Array,
+      required: true,
+    },
     pCategory: {
       type: ObjectId,
       ref: "categories",

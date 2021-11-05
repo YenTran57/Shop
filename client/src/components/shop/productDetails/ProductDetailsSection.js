@@ -218,6 +218,78 @@ const ProductDetailsSection = (props) => {
             <div className="my-4 md:my-6 text-gray-600">
               {sProduct.pDescription}
             </div>
+
+            
+
+
+
+            <div className="my-4 md:my-6">
+              {quantitiy == sProduct.pSize ? (
+                <span className="text-xs text-red-500">Stock limited</span>
+              ) : (
+                ""
+              )}
+              <div
+                className={`flex justify-between items-center px-4 py-2 border ${
+                  quantitiy === sProduct.pSize && "border-red-500"
+                }`}
+              >
+                <div
+                  className={`${
+                    quantitiy === sProduct.pSize && "text-red-500"
+                  }`}
+                >
+                  Size
+                </div> 
+                    
+               
+
+
+
+                <div class="space-x-2 flex">
+                        <label>
+                          <input class="w-9 h-9 flex items-center justify-center bg-gray-100 rounded-lg" name="size" type="radio" value="37" checked/>
+                          37
+                        </label>
+                        <label>
+                          <input class="w-9 h-9 flex items-center justify-center" name="size" type="radio" value="38"/>
+                          38
+                        </label>
+                        <label>
+                          <input class="w-9 h-9 flex items-center justify-center" name="size" type="radio" value="39"/>
+                          39
+                        </label>
+                        <label>
+                          <input class="w-9 h-9 flex items-center justify-center" name="size" type="radio" value="40"/>
+                          40
+                        </label>
+                        <label>
+                          <input class="w-9 h-9 flex items-center justify-center" name="size" type="radio" value="41"/>
+                          41
+                        </label>
+                        <label>
+                          <input class="w-9 h-9 flex items-center justify-center" name="size" type="radio" value="42"/>
+                          42
+                        </label>
+                      </div>
+
+
+
+
+
+
+
+
+
+                </div>
+                </div> 
+
+
+
+
+
+
+
             <div className="my-4 md:my-6">
               {quantitiy == sProduct.pQuantity ? (
                 <span className="text-xs text-red-500">Stock limited</span>
@@ -236,12 +308,13 @@ const ProductDetailsSection = (props) => {
                 >
                   Quantity
                 </div>
+
+                
                 {/* Quantity Button */}
                 {sProduct.pQuantity !== 0 ? (
                   <Fragment>
                     {layoutData.inCart == null ||
-                    (layoutData.inCart !== null &&
-                      layoutData.inCart.includes(sProduct._id) === false) ? (
+                    (layoutData.inCart !== null && layoutData.inCart.includes(sProduct._id) === false) ? (
                       <div className="flex items-center space-x-2">
                         <span
                           onClick={(e) =>
@@ -269,8 +342,7 @@ const ProductDetailsSection = (props) => {
                         </span>
                         <span className="font-semibold">{quantitiy}</span>
                         <span
-                          onClick={(e) =>
-                            updateQuantity(
+                          onClick={(e) => updateQuantity(
                               "increase",
                               sProduct.pQuantity,
                               quantitiy,
@@ -362,6 +434,8 @@ const ProductDetailsSection = (props) => {
                 )}
                 {/* Quantity Button End */}
               </div>
+
+
               {/* Incart and out of stock button */}
               {sProduct.pQuantity !== 0 ? (
                 <Fragment>
@@ -371,7 +445,7 @@ const ProductDetailsSection = (props) => {
                       style={{ background: "#303031" }}
                       className={`px-4 py-2 text-white text-center cursor-not-allowed uppercase opacity-75`}
                     >
-                      In cart
+                      In Cart
                     </div>
                   ) : (
                     <div
@@ -390,7 +464,7 @@ const ProductDetailsSection = (props) => {
                       style={{ background: "#303031" }}
                       className={`px-4 py-2 text-white text-center cursor-pointer uppercase`}
                     >
-                      Add to cart
+                      Add To Cart
                     </div>
                   )}
                 </Fragment>
@@ -402,7 +476,7 @@ const ProductDetailsSection = (props) => {
                       style={{ background: "#303031" }}
                       className={`px-4 py-2 text-white text-center cursor-not-allowed uppercase opacity-75`}
                     >
-                      In cart
+                      In Cart
                     </div>
                   ) : (
                     <div
@@ -410,7 +484,7 @@ const ProductDetailsSection = (props) => {
                       disabled={true}
                       className="px-4 py-2 text-white opacity-50 cursor-not-allowed text-center uppercase"
                     >
-                      Out of stock
+                      Out Of Stock
                     </div>
                   )}
                 </Fragment>

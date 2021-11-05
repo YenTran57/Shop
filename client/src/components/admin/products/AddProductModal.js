@@ -16,6 +16,7 @@ const AddProductDetail = ({ categories }) => {
     pStatus: "Active",
     pImage: null, // Initial value will be null or empty array
     pCategory: "",
+    pSize:"",
     pPrice: "",
     pOffer: 0,
     pQuantity: "",
@@ -57,6 +58,7 @@ const AddProductDetail = ({ categories }) => {
           pImage: "",
           pStatus: "Active",
           pCategory: "",
+          pSize:"",
           pPrice: "",
           pQuantity: "",
           pOffer: 0,
@@ -71,6 +73,7 @@ const AddProductDetail = ({ categories }) => {
             pImage: "",
             pStatus: "Active",
             pCategory: "",
+            pSize:"",
             pPrice: "",
             pQuantity: "",
             pOffer: 0,
@@ -212,6 +215,27 @@ const AddProductDetail = ({ categories }) => {
                 multiple
               />
             </div>
+
+                {/* Size */}
+            <div className="flex flex-col mt-4">
+                <label htmlFor="Size">Product Size *</label>
+                <input
+                  value={fData.pSize}
+                  onChange={(e) =>
+                    setFdata({
+                      ...fData,
+                      error: false,
+                      success: false,
+                      pSize: e.target.value,
+                    })
+                  }
+                  type="text"
+                  className="px-4 py-2 border focus:outline-none"
+                  id="size"
+                />
+              </div>
+
+
             {/* Most Important part for uploading multiple image */}
             <div className="flex space-x-1 py-4">
               <div className="w-1/2 flex flex-col space-y-1">
@@ -311,7 +335,7 @@ const AddProductDetail = ({ categories }) => {
                 type="submit"
                 className="rounded-full bg-gray-800 text-gray-100 text-lg font-medium py-2"
               >
-                Create product
+                Create Product
               </button>
             </div>
           </form>

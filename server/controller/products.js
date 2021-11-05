@@ -46,6 +46,7 @@ class Product {
       pDescription,
       pPrice,
       pQuantity,
+      pSize,
       pCategory,
       pOffer,
       pStatus,
@@ -57,6 +58,7 @@ class Product {
       !pDescription |
       !pPrice |
       !pQuantity |
+      !pSize |
       !pCategory |
       !pOffer |
       !pStatus
@@ -87,13 +89,14 @@ class Product {
           pDescription,
           pPrice,
           pQuantity,
+          pSize,
           pCategory,
           pOffer,
           pStatus,
         });
         let save = await newProduct.save();
         if (save) {
-          return res.json({ success: "Product created successfully" });
+          return res.json({ success: "Product Created Successfully" });
         }
       } catch (err) {
         console.log(err);
@@ -109,6 +112,7 @@ class Product {
       pPrice,
       pQuantity,
       pCategory,
+      pSize,
       pOffer,
       pStatus,
       pImages,
@@ -122,6 +126,7 @@ class Product {
       !pDescription |
       !pPrice |
       !pQuantity |
+      !pSize |
       !pCategory |
       !pOffer |
       !pStatus
@@ -144,6 +149,7 @@ class Product {
         pDescription,
         pPrice,
         pQuantity,
+        pSize,
         pCategory,
         pOffer,
         pStatus,

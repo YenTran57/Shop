@@ -22,6 +22,7 @@ const EditProductModal = (props) => {
     pStatus: "",
     pCategory: "",
     pQuantity: "",
+    pSize :"",
     pPrice: "",
     pOffer: "",
     error: false,
@@ -48,6 +49,7 @@ const EditProductModal = (props) => {
       pStatus: data.editProductModal.pStatus,
       pCategory: data.editProductModal.pCategory,
       pQuantity: data.editProductModal.pQuantity,
+      pSize:data.editProductModal.pSize,
       pPrice: data.editProductModal.pPrice,
       pOffer: data.editProductModal.pOffer,
     });
@@ -66,9 +68,9 @@ const EditProductModal = (props) => {
   const submitForm = async (e) => {
     e.preventDefault();
     if (!editformData.pEditImages) {
-      console.log("Image Not upload=============", editformData);
+      console.log("Image Not Upload=============", editformData);
     } else {
-      console.log("Image uploading");
+      console.log("Image Uploading");
     }
     try {
       let responseData = await editProduct(editformData);
@@ -352,7 +354,7 @@ const EditProductModal = (props) => {
                 type="submit"
                 className="rounded-full bg-gray-800 text-gray-100 text-lg font-medium py-2"
               >
-                Update product
+                Update Product
               </button>
             </div>
           </form>
