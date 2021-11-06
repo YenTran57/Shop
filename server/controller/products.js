@@ -83,17 +83,19 @@ class Product {
         for (const img of images) {
           allImages.push(img.filename);
         }
+        let sizes = pSize.split(",");
         let newProduct = new productModel({
           pImages: allImages,
           pName,
           pDescription,
           pPrice,
           pQuantity,
-          pSize,
+          pSize: sizes,
           pCategory,
           pOffer,
           pStatus,
         });
+        console.log(newProduct);
         let save = await newProduct.save();
         if (save) {
           return res.json({ success: "Product Created Successfully" });
