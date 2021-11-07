@@ -95,7 +95,6 @@ class Product {
           pOffer,
           pStatus,
         });
-        console.log(newProduct);
         let save = await newProduct.save();
         if (save) {
           return res.json({ success: "Product Created Successfully" });
