@@ -19,7 +19,7 @@ const Slider = (props) => {
       <div className="relative mt-16 bg-gray-100 border-2">
         {data.sliderImages.length > 0 ? (
           <img
-            className="w-full"
+            className="w-full vh80 object-cover"
             src={`${apiURL}/uploads/customize/${data.sliderImages[slide].slideImage}`}
             alt="sliderImage"
           />
@@ -28,7 +28,7 @@ const Slider = (props) => {
         )}
         <svg
           onClick={(e) => prevSlide(data.sliderImages.length, slide, setSlide)}
-          className={`z-10 absolute top-0 left-0 mt-64 flex justify-end items-center box-border flex justify-center w-12 h-12 text-gray-700  cursor-pointer hover:text-yellow-700`}
+          className={`z-10 absolute top-0 left-0 flex justify-end items-center box-border flex justify-center w-12 h-full text-gray-700  cursor-pointer hover:text-yellow-700`}
           fill="none"
           stroke="currentColor"
           viewBox="0 0 24 24"
@@ -41,9 +41,10 @@ const Slider = (props) => {
             d="M15 19l-7-7 7-7"
           />
         </svg>
+      
         <svg
           onClick={(e) => nextSlide(data.sliderImages.length, slide, setSlide)}
-          className={`z-10 absolute top-0 right-0 mt-64 flex justify-start items-center box-border flex justify-center w-12 h-12 text-gray-700 cursor-pointer hover:text-yellow-700`}
+          className={`z-10 absolute top-0 right-0 flex justify-start items-center box-border flex justify-center w-12 h-full text-gray-700 cursor-pointer hover:text-yellow-700`}
           fill="none"
           stroke="currentColor"
           viewBox="0 0 24 24"

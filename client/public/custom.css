@@ -1,0 +1,7 @@
+.vh80{
+  max-height: calc(100vh - 80px);
+}
+
+.mt-50pt{
+  margin-top: calc(50%);
+}
