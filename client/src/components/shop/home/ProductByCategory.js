@@ -2,7 +2,7 @@ import React, { Fragment, useEffect, useState } from "react";
 import { useHistory, useParams } from "react-router-dom";
 import Layout from "../layout";
 import { productByCategory } from "../../admin/products/FetchApi";
-
+import "./style.css";
 const apiURL = process.env.REACT_APP_API_URL;
 
 const Submenu = ({ category }) => {
@@ -56,10 +56,10 @@ const AllProduct = ({ products }) => {
           products.map((item, index) => {
             return (
               <Fragment key={index}>
-                <div className="relative col-span-1 m-2">
+                <div className="relative col-span-1 m-2 h-550px">
                   <img
                     onClick={(e) => history.push(`/products/${item._id}`)}
-                    className="w-full object-cover object-center cursor-pointer"
+                    className="w-full h-80pt object-cover object-center cursor-pointer "
                     src={`${apiURL}/uploads/products/${item.pImages[0]}`}
                     alt=""
                   />
@@ -89,7 +89,7 @@ const AllProduct = ({ products }) => {
                       </span>
                     </div>
                   </div>
-                  <div>{item.pPrice}.000 VND</div>
+                  <div>{item.pPrice}$</div>
                   <div className="absolute top-0 right-0 mx-2 my-2 md:mx-4">
                     <svg
                       className="w-5 h-5 md:w-6 md:h-6 cursor-pointer text-yellow-700"

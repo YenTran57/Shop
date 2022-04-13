@@ -39,12 +39,8 @@ const Navber = (props) => {
             >
               Shop
             </span>
-            <span
-              className="hover:bg-gray-200 px-4 py-3 rounded-lg font-light tracking-widest hover:text-gray-800 cursor-pointer"
-              onClick={(e) => history.push("/blog")}
-            >
-              Blog
-            </span>
+
+           
             <span
               className="hover:bg-gray-200 px-4 py-3 rounded-lg font-light tracking-widest hover:text-gray-800 cursor-pointer"
               onClick={(e) => history.push("/contact-us")}
@@ -87,31 +83,7 @@ const Navber = (props) => {
           
           <div className="flex items-right col-span-2 lg:col-span-1 flex justify-end">
            
-              {/* button Search */}
-            <div
-              onClick={(e) => history.push("/Search")}
-              className="hover:bg-gray-200 rounded-lg px-2 py-2 cursor-pointer"
-              title="Search"
-            >
-              <svg
-                className={`${
-                  location.pathname === "/Search"
-                    ? "fill-current text-gray-800"
-                    : ""
-                } w-8 h-8 text-gray-600 cursor-pointer`}
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
-                />
-              </svg>
-            </div>
+            
             {/*  WishList Page Button */}
 
             <div
@@ -142,7 +114,7 @@ const Navber = (props) => {
               <Fragment>
                 <div
                   className="userDropdownBtn hover:bg-gray-200 px-2 py-2 rounded-lg relative"
-                  title="Logout"
+                  title="Admin Panel"
                 >
                   <svg
                     className="cursor-pointer w-8 h-8 text-gray-600 hover:text-gray-800"
@@ -402,12 +374,7 @@ const Navber = (props) => {
             >
               Shop
             </span>
-            <span
-              className="font-medium text-lg tracking-widest hover:text-gray-800 hover:bg-gray-200 px-3 py-2 rounded-lg cursor-pointer"
-              onClick={(e) => history.push("/blog")}
-            >
-              Blog
-            </span>
+           
             <span
               className="font-medium text-lg tracking-widest hover:text-gray-800 hover:bg-gray-200 px-3 py-2 rounded-lg cursor-pointer"
               onClick={(e) => history.push("/contact-us")}

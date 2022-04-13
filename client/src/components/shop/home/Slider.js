@@ -3,6 +3,7 @@ import OrderSuccessMessage from "./OrderSuccessMessage";
 import { HomeContext } from "./";
 import { sliderImages } from "../../admin/dashboardAdmin/Action";
 import { prevSlide, nextSlide } from "./Mixins";
+import "./style.css";
 
 const apiURL = process.env.REACT_APP_API_URL;
 
@@ -16,13 +17,30 @@ const Slider = (props) => {
 
   return (
     <Fragment>
-      <div className="relative mt-16 bg-gray-100 border-2">
+      <div className="relative mt-8 bg-white-500 border-2 Slide">
         {data.sliderImages.length > 0 ? (
-          <img
-            className="w-full vh80 object-cover"
-            src={`${apiURL}/uploads/customize/${data.sliderImages[slide].slideImage}`}
-            alt="sliderImage"
-          />
+          <>
+          <div className="ImgContainer">
+            <img
+              className="w-full vh80 object-scale-down  "
+              src={`${apiURL}/uploads/customize/${data.sliderImages[slide].slideImage}`}
+              alt="sliderImage"
+            />
+          </div>
+          <div className="InfoContainer">
+          <h1 class="uppercase text-yellow-500 font-bold tracking-wider text-2xl">New Arrivals are here</h1>
+            <h2 class="font-black text-black-700 leading-none tracking-wider mb-6 mt-3 text-2xl lg:text-2xl xl:text-2xl">The new arrival have, well, newly arrived.</h2>
+            <p class="text-gray-600 font-roboto text-lg sm:w-2/3 lg:w-1/2">Check out the lasted options from our winter small-batch release while they're still in stok.</p>
+              <a
+                href="#shop"
+               
+                className=" cursor-pointer text-2xl  px-4 py-1 text-sm text-red-700 font-bold rounded-full border hover:text-white hover:bg-yellow-600 hover:border-transparent focus:outline-none focus:ring-2  focus:ring-offset-2"
+              >
+                Shop Now
+              </a>
+          </div>
+          </>
+          
         ) : (
           ""
         )}
@@ -57,15 +75,8 @@ const Slider = (props) => {
             d="M9 5l7 7-7 7"
           />
         </svg>
-        <div className="absolute inset-0 flex items-center justify-center">
-          <a
-            href="#shop"
-            style={{ background: "#303031" }}
-            className="cursor-pointer box-border text-2xl text-white px-4 py-2 rounded"
-          >
-            Shop Now
-          </a>
-        </div>
+
+
       </div>
       <OrderSuccessMessage />
     </Fragment>

@@ -108,8 +108,8 @@ const FilterList = () => {
         <div className="flex justify-between items-center">
           <div className="flex flex-col space-y-2  w-2/3 lg:w-2/4">
             <label htmlFor="points" className="text-sm">
-              Price (between 0 and 10VND):{" "}
-              <span className="font-semibold text-yellow-700">{range}.000 VND</span>{" "}
+              Price (between 0 and 1000$):{" "}
+              <span className="font-semibold text-yellow-700">{range}$</span>{" "}
             </label>
             <input
               value={range}
